@@ -59,24 +59,12 @@ const Navigation = ({ state, handleClick }) => {
   let line3 = useRef(null)
   let info = useRef(null)
 
-  const body = document.querySelector("body")
-  // const checkMenuHeight = () => {
-  //   if (state.clicked === false) {
-  //     body.style.overflowY = "scroll"
-  //   } else if (
-  //     state.clicked === true ||
-  //     (state.clicked === true && state.initial === null)
-  //   ) {
-  //     body.style.overflowY = "hidden"
-  //   }
-  // }
-
   useEffect(() => {
     // If the menu is open and we click the menu button to close it.
     if (state.clicked === false) {
       // If menu is closed and we want to open it.
       staggerRevealClose(reveal2, reveal1)
-      //body.style.overflowY = "scroll"
+
       // Set menu to display none
       gsap.to(menuLayer, { duration: 1, css: { display: "none" } })
     } else if (
@@ -84,7 +72,7 @@ const Navigation = ({ state, handleClick }) => {
       (state.clicked === true && state.initial === null)
     ) {
       // Set menu to display block
-      // body.style.overflowY = "hidden"
+
       gsap.to(menuLayer, { duration: 0, css: { display: "block" } })
       //Allow menu to have height of 100%
       gsap.to([reveal1, reveal2], {

@@ -1,0 +1,16 @@
+export const colors = {
+  background: "#fff",
+  text: "#db3000",
+  primary: "#db3000",
+  muted: "#fffbfa",
+  active: "#751a00",
+  black: "#000",
+  brown: "#ae7f4d",
+  green: "#867d2c",
+  browngreen: "#54441b",
+  yellow: "#dcaa68",
+  lightyellow: "#fff8a1",
+  darkbrown: "#5f310e",
+  white: "#fadbb2",
+  skyblue: "#6b8cc8",
+}

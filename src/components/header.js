@@ -6,7 +6,7 @@ import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import BackgroundImage from "gatsby-background-image"
 import { convertToBgImage } from "gbimage-bridge"
 
-//import Navigation from "./navbar"
+import Navigation from "./navbar"
 import * as styles from "./menu.css"
 import { Flex } from "./ui"
 
@@ -82,7 +82,7 @@ const Header = () => {
         </Flex>
       </div>
 
-      {/* <Navigation state={state} /> */}
+      <Navigation state={state} />
     </div>
   )
 }

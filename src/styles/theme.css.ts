@@ -55,8 +55,8 @@ const fontWeights = {
 
 const fonts = {
   text: '"DM Sans", sans-serif',
-  heading: '"Jungle Fever NF", sans-serif',
-  subheading: '"Euphorigenic", serif',
+  heading: "JungleFeverNf",
+  subheading: "Euphorigenic",
   mono: "DM Mono, Menlo, monospace",
 }
 

@@ -7,9 +7,9 @@ import { theme } from "./theme.css"
 import background from "../images/background-main.png"
 import { colors } from "./colors.css"
 
-globalFontFace("Jungle Fever Nf", {
-  src: "../fonts/Jungle Fever NF.woff2",
-})
+// globalFontFace("JungleFeverNf", {
+//   src: Jungle,
+// })
 
 globalFontFace("Euphorigenic", {
   src: "../fonts/euphorigenic.woff2",
@@ -31,9 +31,9 @@ globalStyle("*", {
   boxSizing: "border-box",
 })
 
-globalStyle("h1", {
-  fontFamily: theme.fonts.heading,
-})
+// globalStyle("h1", {
+//   fontFamily: Jungle,
+// })
 
 globalStyle("h2", {
   fontFamily: theme.fonts.subheading,

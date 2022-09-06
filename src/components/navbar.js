@@ -14,7 +14,7 @@ import {
   staggerRevealClose,
 } from "./animations"
 
-import { Box, Flex, Subhead, Text } from "./ui"
+import { Box, Flex, Subhead, Text, Section } from "./ui"
 
 const cities = [
   {
@@ -81,96 +81,104 @@ const Navigation = ({ state, handleClick }) => {
   }, [state])
 
   return (
-    <div className={styles.menuContainer} ref={el => (menuLayer = el)}>
-      <div
-        className={styles.menuSecondaryBackground}
-        ref={el => (reveal1 = el)}
-      ></div>
-      <div className={styles.menuLayerWrapper}>
-        <div className={styles.menuLayer} ref={el => (reveal2 = el)}>
+    <Section>
+      <Box>
+        <div className={styles.menuContainer} ref={el => (menuLayer = el)}>
           <div
-            className={styles.menuCityBackground}
-            ref={el => (cityBackground = el)}
+            className={styles.menuSecondaryBackground}
+            ref={el => (reveal1 = el)}
           ></div>
+          <div className={styles.menuLayerWrapper}>
+            <div className={styles.menuLayer} ref={el => (reveal2 = el)}>
+              <div
+                className={styles.menuCityBackground}
+                ref={el => (cityBackground = el)}
+              ></div>
 
-          <Flex>
-            <Box center width="half" paddingY={5}>
-              <ul className={styles.menuLinklist}>
-                <li className={styles.menuLinklistItem}>
-                  <Link
-                    onMouseEnter={e => handleHover(e)}
-                    onBlur=""
-                    onMouseOut={e => handleHoverExit(e)}
-                    ref={el => (line1 = el)}
-                    to="/"
-                    className={styles.menuLinkItem}
-                  >
-                    <h1>Home</h1>
-                  </Link>
-                </li>
-                <li className={styles.menuLinklistItem}>
-                  <Link
-                    className={styles.menuLinkItem}
-                    onMouseEnter={e => handleHover(e)}
-                    onBlur=""
-                    onMouseOut={e => handleHoverExit(e)}
-                    ref={el => (line2 = el)}
-                    to="/about"
-                  >
-                    <h1>About Us</h1>
-                  </Link>
-                </li>
-                <li className={styles.menuLinklistItem}>
-                  <Link
-                    className={styles.menuLinkItem}
-                    onMouseEnter={e => handleHover(e)}
-                    onMouseOut={e => handleHoverExit(e)}
-                    onBlur=""
-                    ref={el => (line3 = el)}
-                    to="/contact"
-                  >
-                    <h1>Contact</h1>
-                  </Link>
-                </li>
-              </ul>
-            </Box>
-            <Box width="half" padding={3}>
-              <div ref={el => (info = el)}>
-                <Subhead as="h2" color="green">
-                  Our Promise
-                </Subhead>
-              </div>
-              <Text as="p" color="green">
-                In travel things can change unexpectedly and we promise from
-                start to finish we will be with you the entire way to help
-                shedule, reschedule and accomodate for changes. We are prepared
-                to help our travellers have the safest and most rewarding safari
-                possible.
-              </Text>
-            </Box>
-          </Flex>
-          <Box>
-            <Box center>
-              <div className={styles.cities}>
-                <div className={styles.location}>Safari Tours Category:</div>
-
-                {cities.map(el => (
-                  <Link
-                    to={`/${el.slug}`}
-                    className={styles.span}
-                    key={el.name}
-                    onMouseEnter={() => handleCity(el.image, cityBackground)}
-                    onMouseOut={() => handleCityReturn(cityBackground)}
-                  >
-                    <span>{el.name}</span>
-                  </Link>
-                ))}
-              </div>
-            </Box>
-          </Box>
+              <Flex>
+                <Box center width="half" paddingY={5}>
+                  <ul className={styles.menuLinklist}>
+                    <li className={styles.menuLinklistItem}>
+                      <Link
+                        onMouseEnter={e => handleHover(e)}
+                        onBlur=""
+                        onMouseOut={e => handleHoverExit(e)}
+                        ref={el => (line1 = el)}
+                        to="/"
+                        className={styles.menuLinkItem}
+                      >
+                        <h1>Home</h1>
+                      </Link>
+                    </li>
+                    <li className={styles.menuLinklistItem}>
+                      <Link
+                        className={styles.menuLinkItem}
+                        onMouseEnter={e => handleHover(e)}
+                        onBlur=""
+                        onMouseOut={e => handleHoverExit(e)}
+                        ref={el => (line2 = el)}
+                        to="/about"
+                      >
+                        <h1>About Us</h1>
+                      </Link>
+                    </li>
+                    <li className={styles.menuLinklistItem}>
+                      <Link
+                        className={styles.menuLinkItem}
+                        onMouseEnter={e => handleHover(e)}
+                        onMouseOut={e => handleHoverExit(e)}
+                        onBlur=""
+                        ref={el => (line3 = el)}
+                        to="/contact"
+                      >
+                        <h1>Contact</h1>
+                      </Link>
+                    </li>
+                  </ul>
+                </Box>
+                <Box
+                  width="half"
+                  padding={3}
+                  className={styles.menuTextWrapper}
+                >
+                  <div ref={el => (info = el)}>
+                    <Subhead as="h2" color="green">
+                      Our Promise
+                    </Subhead>
+                  </div>
+                  <Text as="p" color="green">
+                    In travel things can change unexpectedly and we promise from
+                    start to finish we will be with you the entire way to help
+                    shedule, reschedule and accomodate for changes. We are
+                    prepared to help our travellers have the safest and most
+                    rewarding safari possible.
+                  </Text>
+                </Box>
+              </Flex>
+              <Box>
+                <Box center>
+                  <div className={styles.cities}>
+                    {cities.map(el => (
+                      <Link
+                        to={`/${el.slug}`}
+                        className={styles.span}
+                        key={el.name}
+                        onMouseEnter={() =>
+                          handleCity(el.image, cityBackground)
+                        }
+                        onMouseOut={() => handleCityReturn(cityBackground)}
+                      >
+                        <span>{el.name}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </Box>
+              </Box>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      </Box>
+    </Section>
   )
 }
 

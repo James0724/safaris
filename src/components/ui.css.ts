@@ -370,10 +370,23 @@ export const text: Record<TextVariants, string> = styleVariants({
     margin0,
     {
       marginBottom: theme.space[3],
-      fontSize: theme.fontSizes[5],
       fontWeight: theme.fontWeights.extrabold,
       lineHeight: theme.lineHeights.tight,
       letterSpacing: theme.letterSpacings.wide,
+      whiteSpace: "nowrap",
+      "@media": {
+        [media.medium]: {
+          fontSize: theme.fontSizes[4],
+          marginBottom: theme.space[0],
+        },
+        [media.small]: {
+          fontSize: theme.fontSizes[3],
+          marginBottom: theme.space[0],
+        },
+        [media.large]: {
+          fontSize: theme.fontSizes[5],
+        },
+      },
     },
   ],
   subheadSmall: [

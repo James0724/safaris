@@ -2,7 +2,14 @@
   font-family: "Heading Font";
   src: url("../fonts/JungleFeverNF.woff2");
 }
+@font-face {
+  font-family: "SubHeading Font";
+  src: url("../fonts/Euphorigenic.woff2");
+}
 
 h1 {
   font-family: "Heading Font" !important;
+}
+h2 {
+  font-family: "SubHeading Font" !important;
 }

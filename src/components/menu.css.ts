@@ -42,25 +42,20 @@ export const navbarHeaderNav = style({
 })
 
 export const logoLink = style({
-  fontWeight: theme.fontWeights.bold,
-  fontSize: theme.fontSizes[3],
-  textDecoration: "none",
-  color: colors.green,
+  height: "30px",
+  width: "30px",
+
   ":hover": { color: colors.lightyellow },
+
   "@media": {
-    [media.small]: {
-      fontSize: theme.fontSizes[2],
-      fontWeight: theme.fontWeights.medium,
-    },
+    [media.small]: { height: "50px", width: "50px" },
   },
 })
 
 export const menuButton = style({
   border: "none",
   background: "none",
-  outline: "none",
   cursor: "pointer",
-  fontSize: theme.fontSizes[3],
   mixBlendMode: "difference",
 })
 
@@ -124,12 +119,17 @@ export const menuLinklist = style({
   padding: "0",
   height: "100%",
   textDecoration: "none",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  flexDirection: "column",
 })
 
 export const menuLinklistItem = style({
   listStyle: "none",
   fontWeight: theme.fontWeights.extrabold,
   cursor: "pointer",
+  whiteSpace: "nowrap",
   paddingTop: "1rem",
   paddingBottom: "1rem",
   position: "relative",
@@ -173,12 +173,45 @@ export const span = style({
   cursor: "pointer",
   paddingRight: "0.7rem",
   paddingLeft: "0.7rem",
+  whiteSpace: "nowrap",
   transition: "0.3s ease-in-out",
+  paddingTop: "0.5em",
+  paddingBottom: "0.5em",
   ":hover": {
     color: colors.lightyellow,
+  },
+  "@media": {
+    [media.medium]: {
+      paddingTop: "0",
+      paddingBottom: "0",
+    },
+    [media.large]: {
+      paddingTop: "0",
+      paddingBottom: "0",
+    },
   },
 })
 export const cities = style({
   display: "flex",
-  flexDirection: "row",
+  flexDirection: "column",
+  "@media": {
+    [media.medium]: {
+      flexDirection: "row",
+    },
+    [media.large]: {
+      flexDirection: "row",
+    },
+  },
+})
+
+export const menuTextWrapper = style({
+  display: "none",
+  "@media": {
+    [media.small]: {
+      display: "block",
+    },
+    [media.large]: {
+      display: "block",
+    },
+  },
 })

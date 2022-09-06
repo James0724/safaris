@@ -1,25 +1,13 @@
-import {
-  globalStyle,
-  globalKeyframes,
-  globalFontFace,
-} from "@vanilla-extract/css"
+import { globalStyle, globalKeyframes } from "@vanilla-extract/css"
 import { theme } from "./theme.css"
 import background from "../images/background-main.png"
 import { colors } from "./colors.css"
-
-// globalFontFace("JungleFeverNf", {
-//   src: Jungle,
-// })
-
-globalFontFace("Euphorigenic", {
-  src: "../fonts/euphorigenic.woff2",
-})
 
 globalStyle("body", {
   height: "100%",
   margin: 0,
   padding: 0,
-  fontFamily: theme.fonts.text,
+  overflowX: "hidden",
   color: theme.colors.black,
   backgroundRepeat: "repeat",
   background: `linear-gradient(0deg, rgba(250, 221, 187, 0.95), rgba(250, 221, 187, 0.95)), url(${background})`,
@@ -30,10 +18,6 @@ globalStyle("body", {
 globalStyle("*", {
   boxSizing: "border-box",
 })
-
-// globalStyle("h1", {
-//   fontFamily: Jungle,
-// })
 
 globalStyle("h2", {
   fontFamily: theme.fonts.subheading,

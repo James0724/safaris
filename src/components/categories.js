@@ -49,12 +49,12 @@ export default function FeatureList() {
           </Text>
         </Box>
         <Box>
-          <Grid>
+          <div className={styles.Flexbox}>
             {data.map((item, i) => {
               const slg = item.categoryName
               const slug = slugify(slg, { lower: true })
               return (
-                <Link key={i} to={`/${slug}`}>
+                <Link key={i} to={`/${slug}`} className={styles.FlexboxItem}>
                   <Box padding={2}>
                     <div className={styles.gridImageWrapper}>
                       <GatsbyImage
@@ -71,7 +71,7 @@ export default function FeatureList() {
                 </Link>
               )
             })}
-          </Grid>
+          </div>
         </Box>
       </Container>
     </Section>

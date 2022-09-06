@@ -8,14 +8,14 @@ import { convertToBgImage } from "gbimage-bridge"
 
 import Navigation from "./navbar"
 import * as styles from "./menu.css"
-import { Flex } from "./ui"
+import { Flex, Box } from "./ui"
 
 const Header = () => {
   const results = useStaticQuery(graphql`
     {
       datoCmsLogoItem {
         logoImage {
-          gatsbyImageData(height: 80, width: 80)
+          gatsbyImageData
         }
       }
     }
@@ -67,23 +67,29 @@ const Header = () => {
   }
 
   return (
-    <div className={styles.navbarHeader}>
-      <div className={styles.navbarHeaderNav}>
-        <Flex variant="spaceBetween">
-          <Link to="/" className={styles.logoLink}>
-            <BackgroundImage {...bgImage}>
-              <GatsbyImage image={image} alt={"logo"} />
-            </BackgroundImage>
-          </Link>
+    <Box>
+      <div className={styles.navbarHeader}>
+        <div className={styles.navbarHeaderNav}>
+          <Flex variant="spaceBetween">
+            <Link to="/" className={styles.logoLink}>
+              <BackgroundImage {...bgImage}>
+                <GatsbyImage image={image} alt={"logo"} />
+              </BackgroundImage>
+            </Link>
 
-          <button disabled={disabled} onClick={handleMenu}>
-            <h1 style={{ color: "#867d2c" }}>{state.menuName}</h1>
-          </button>
-        </Flex>
+            <button
+              disabled={disabled}
+              onClick={handleMenu}
+              className={styles.menuButton}
+            >
+              <h1 style={{ color: "#867d2c" }}>{state.menuName}</h1>
+            </button>
+          </Flex>
+        </div>
+
+        <Navigation state={state} />
       </div>
-
-      <Navigation state={state} />
-    </div>
+    </Box>
   )
 }
 

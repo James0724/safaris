@@ -35,6 +35,23 @@ export const categoryHeading = style({
 })
 
 export const gridImageWrapper = style({
-  height: "250px",
+  height: "300px",
   overflow: "hidden",
+  "@media": {
+    [media.small]: { height: "180px" },
+    [media.medium]: { height: "180px" },
+    [media.large]: { height: "250px" },
+  },
+})
+
+export const Flexbox = style({
+  display: "flex",
+  flexWrap: "wrap",
+})
+export const FlexboxItem = style({
+  flex: "100%",
+  "@media": {
+    [media.small]: { flex: "50%" },
+    [media.medium]: { flex: "33.33%" },
+  },
 })

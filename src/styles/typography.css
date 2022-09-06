@@ -1,7 +1,8 @@
 @font-face {
-  font-family: "Jungle Fever Nf";
-  src: url("/fonts/JungleFeverNF.woff2") format("woff2");
+  font-family: "Heading Font";
+  src: url("../fonts/JungleFeverNF.woff2");
 }
+
 h1 {
-  font-family: "Jungle Fever Nf" !important;
+  font-family: "Heading Font" !important;
 }

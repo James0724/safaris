@@ -59,7 +59,9 @@ export default function Hero() {
               “Welcome” and last day “Goodbye”. A true 1 day tour should not be
               advertised as 3 days!
             </Text>
-            <Link>CONTACT US</Link>
+            <Link to="/contact" className="link link--dia">
+              Contact Us
+            </Link>
           </Box>
         </Flex>
       </Container>

@@ -14,7 +14,7 @@ import {
   staggerRevealClose,
 } from "./animations"
 
-import { Box, Flex, Subhead, Text, Section } from "./ui"
+import { Box, Flex, Subhead, Text, Section, Container } from "./ui"
 
 const cities = [
   {
@@ -81,7 +81,7 @@ const Navigation = ({ state, handleClick }) => {
   }, [state])
 
   return (
-    <Section>
+    <Container>
       <Box>
         <div className={styles.menuContainer} ref={el => (menuLayer = el)}>
           <div
@@ -142,11 +142,11 @@ const Navigation = ({ state, handleClick }) => {
                   className={styles.menuTextWrapper}
                 >
                   <div ref={el => (info = el)}>
-                    <Subhead as="h2" color="green">
+                    <Subhead as="h2" color="darkgreen">
                       Our Promise
                     </Subhead>
                   </div>
-                  <Text as="p" color="green">
+                  <Text as="p" color="darkbrown">
                     In travel things can change unexpectedly and we promise from
                     start to finish we will be with you the entire way to help
                     shedule, reschedule and accomodate for changes. We are
@@ -178,7 +178,7 @@ const Navigation = ({ state, handleClick }) => {
           </div>
         </div>
       </Box>
-    </Section>
+    </Container>
   )
 }
 

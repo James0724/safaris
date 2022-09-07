@@ -67,29 +67,27 @@ const Header = () => {
   }
 
   return (
-    <Box>
-      <div className={styles.navbarHeader}>
-        <div className={styles.navbarHeaderNav}>
-          <Flex variant="spaceBetween">
-            <Link to="/" className={styles.logoLink}>
-              <BackgroundImage {...bgImage}>
-                <GatsbyImage image={image} alt={"logo"} />
-              </BackgroundImage>
-            </Link>
+    <div className={styles.navbarHeader}>
+      <div className={styles.navbarHeaderNav}>
+        <Flex variant="spaceBetween">
+          <Link to="/" className={styles.logoLink}>
+            <BackgroundImage {...bgImage}>
+              <GatsbyImage image={image} alt={"logo"} />
+            </BackgroundImage>
+          </Link>
 
-            <button
-              disabled={disabled}
-              onClick={handleMenu}
-              className={styles.menuButton}
-            >
-              <h1 style={{ color: "#867d2c" }}>{state.menuName}</h1>
-            </button>
-          </Flex>
-        </div>
-
-        <Navigation state={state} />
+          <button
+            disabled={disabled}
+            onClick={handleMenu}
+            className={styles.menuButton}
+          >
+            <h1 style={{ color: "#867d2c" }}>{state.menuName}</h1>
+          </button>
+        </Flex>
       </div>
-    </Box>
+
+      <Navigation state={state} />
+    </div>
   )
 }
 

@@ -1,5 +1,10 @@
 import * as React from "react"
 import { Twitter, Instagram, Facebook } from "react-feather"
+
+import { graphql, useStaticQuery } from "gatsby"
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
+
+import { Link } from "./ui"
 import {
   Container,
   Flex,
@@ -14,7 +19,21 @@ import {
   FlexListSpaceBetween,
 } from "./ui"
 
+import * as styles from "../components/ui.css"
+
 export default function Footer() {
+  const results = useStaticQuery(graphql`
+    {
+      datoCmsLogoItem {
+        logoImage {
+          gatsbyImageData
+        }
+      }
+    }
+  `)
+  const data = results.datoCmsLogoItem.logoImage
+  const image = getImage(data)
+
   return (
     <Box as="footer" paddingY={4}>
       <Container>
@@ -28,9 +47,12 @@ export default function Footer() {
           </Subhead>
           <UnderlineLight />
         </Box>
-        <Box paddingY={4}>
+        <Box>
           <Flex variant="start" responsive>
-            <Box>
+            <Box paddingX={4}>
+              <GatsbyImage image={image} alt="logo" />
+            </Box>
+            {/* <Box>
               <FlexList>
                 <li>
                   <h3>facebook</h3>
@@ -39,21 +61,29 @@ export default function Footer() {
                   <h3>facebook</h3>
                 </li>
               </FlexList>
-            </Box>
+            </Box> */}
             <Box>
               <FlexListColumnStart>
                 <Kicker color="lightyellow">QUICK LINKS</Kicker>
                 <li>
-                  <h3>HOME</h3>
+                  <Link to="/" class="link link--io">
+                    Home
+                  </Link>
                 </li>
                 <li>
-                  <h3>ABOUT</h3>
+                  <Link to="/about" class="link link--io">
+                    About
+                  </Link>
                 </li>
                 <li>
-                  <h3>CONTACTS</h3>
+                  <Link to="/contact" class="link link--io">
+                    Contact
+                  </Link>
                 </li>
                 <li>
-                  <h3>SAFARI PACKAGES</h3>
+                  <Link href="#" class="link link--io">
+                    Safari Packages
+                  </Link>
                 </li>
               </FlexListColumnStart>
             </Box>
@@ -91,12 +121,12 @@ export default function Footer() {
         <Box paddingY={1}>
           <FlexListSpaceBetween>
             <Box>
-              <Text as="p" className="copyright">
+              <Text as="p" className="copyright" color="yellow">
                 Copyright © rights reserved.
               </Text>
             </Box>
             <Box>
-              <FlexList>
+              <FlexList className={styles.footerLinks}>
                 <l1>Terms & Conditions</l1> <li>Privacy Policy</li>
                 <li>Covid-19 & Booking Flexibility</li>
               </FlexList>

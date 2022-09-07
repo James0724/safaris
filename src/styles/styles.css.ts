@@ -8,7 +8,7 @@ globalStyle("body", {
   margin: 0,
   padding: 0,
   overflowX: "hidden",
-  color: theme.colors.black,
+  color: theme.colors.darkbrown,
   backgroundRepeat: "repeat",
   background: `linear-gradient(0deg, rgba(250, 221, 187, 0.95), rgba(250, 221, 187, 0.95)), url(${background})`,
   WebkitFontSmoothing: "antialiased",

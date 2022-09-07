@@ -53,7 +53,9 @@ export default function Ad() {
               create a seamless experience while handcrafting your bespoke
               journey.
             </Text>
-            <Link>EXPLORE</Link>
+            <Link to="/about" className="link link--dia">
+              Explore
+            </Link>
           </Box>
           <Box width="half">
             <BackgroundImage {...bgImage}>

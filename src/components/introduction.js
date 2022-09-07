@@ -61,7 +61,7 @@ export default function FeatureList() {
             <Kicker>QUICK INTRO</Kicker>
             <Underline />
             <Text as="p">
-              We are a dynamic, proudly Kenya and Tanzaia safari company. we
+              We are a dynamic, proudly Kenya and Tanzania safari company. we
               have professional licenced guides speaking four languages English,
               Spanish, French and Swahili. for the past 5 years we have been
               leading safari tours on behalf of reputable tour companies.
@@ -71,7 +71,10 @@ export default function FeatureList() {
               profesional services delivered by experienced, knowledgeable and
               freindly staff.
             </Text>
-            <Link>MORE ABOUT US</Link>
+
+            <Link to="/about" className="link link--dia">
+              More About Us
+            </Link>
           </Box>
         </Flex>
       </Container>

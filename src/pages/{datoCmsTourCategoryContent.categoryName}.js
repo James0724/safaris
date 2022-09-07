@@ -1,9 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { getImage } from "gatsby-plugin-image"
 
-import * as styles from "../components/category-page.css"
+import BackgroundImage from "gatsby-background-image"
+import { convertToBgImage } from "gbimage-bridge"
+
 import {
   Box,
   Kicker,
@@ -15,13 +17,18 @@ import {
   Container,
 } from "../components/ui"
 
+import * as main from "../components/ui.css"
+
 const CategoryTemplate = ({ data }) => {
   const { categoryName, categoryImage, categoryDescription } =
     data.datoCmsTourCategoryContent
 
+  const image = getImage(categoryImage)
+  const bgImage = convertToBgImage(image)
+
   return (
     <Layout>
-      <div className={styles.heroContainer}>
+      {/* <div className={styles.heroContainer}>
         <div className={styles.categoryHeading}>
           <SuperHeading as="h1" color="green" index="1">
             {categoryName}
@@ -33,7 +40,20 @@ const CategoryTemplate = ({ data }) => {
             image={getImage(categoryImage.gatsbyImageData)}
           />
         </div>
-      </div>
+      </div> */}
+
+      <BackgroundImage
+        Tag="section"
+        {...bgImage}
+        className={main.heroImageWrapper}
+      >
+        <div className={main.heroTextWrapper}>
+          <SuperHeading color="green" index="1">
+            {categoryName}
+          </SuperHeading>
+        </div>
+      </BackgroundImage>
+
       <Section>
         <Container>
           <Box center paddingY={5}>

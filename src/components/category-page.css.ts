@@ -35,7 +35,7 @@ export const categoryHeading = style({
 })
 
 export const gridImageWrapper = style({
-  height: "300px",
+  height: "200px",
   overflow: "hidden",
   "@media": {
     [media.small]: { height: "180px" },

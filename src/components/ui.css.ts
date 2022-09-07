@@ -15,8 +15,18 @@ export const container = style({
   maxWidth: theme.sizes.container,
   marginLeft: "auto",
   marginRight: "auto",
-  paddingLeft: theme.space[4],
-  paddingRight: theme.space[4],
+  paddingLeft: theme.space[2],
+  paddingRight: theme.space[2],
+  "@media": {
+    [media.small]: {
+      paddingLeft: theme.space[4],
+      paddingRight: theme.space[4],
+    },
+    [media.large]: {
+      paddingLeft: theme.space[4],
+      paddingRight: theme.space[4],
+    },
+  },
 })
 
 export type Containers = "normal" | "wide" | "narrow" | "tight" | "fullbleed"
@@ -373,18 +383,21 @@ export const text: Record<TextVariants, string> = styleVariants({
       fontWeight: theme.fontWeights.extrabold,
       lineHeight: theme.lineHeights.tight,
       letterSpacing: theme.letterSpacings.wide,
-      whiteSpace: "nowrap",
+
       "@media": {
         [media.medium]: {
           fontSize: theme.fontSizes[4],
-          marginBottom: theme.space[0],
+          marginBottom: theme.space[1],
+          whiteSpace: "nowrap",
         },
         [media.small]: {
           fontSize: theme.fontSizes[3],
-          marginBottom: theme.space[0],
+          marginBottom: theme.space[1],
+          whiteSpace: "nowrap",
         },
         [media.large]: {
           fontSize: theme.fontSizes[5],
+          whiteSpace: "nowrap",
         },
       },
     },
@@ -731,6 +744,10 @@ export const video = style({
   left: 0,
 })
 
+export const footerLinks = style({
+  overflow: "hidden",
+})
+
 // export const imageWrapper = style({
 //   position: "relative",
 //   backgroundSize: "cover",
@@ -757,14 +774,38 @@ export const video = style({
 export const heroImageWrapper = style({
   height: "75vh",
   backgroundAttachment: "fixed",
-  backgroundPosition: "bottom center",
+  backgroundPosition: "center",
 })
 export const heroTextWrapper = style({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   height: "100%",
+  textAlign: "center",
 })
+// export const linkText = style({
+//   ":after": {opacity: "0",
+//     transformOrigin: "50% 0%",
+//     transform: "translate3d(0, 3px, 0)",
+//     transitionProperty: "transform, opacity",
+//     transitionDuration: "0.3s",
+// transitionTimingFunction: "cubic- bezier(0.2, 1, 0.8, 1)",
+//   },
+//   ":before": {
+//     opacity: "0",
+//     transformOrigin: "50% 0%",
+//     transform: "translate3d(0, 3px, 0)",
+//     transitionProperty: "transform, opacity",
+//     transitionDuration: "0.3s",
+//     transitionTimingFunction: "cubic- bezier(0.2, 1, 0.8, 1)",
+//   },
+//   ":hover": {
+//     opacity: "1",
+//     transform: "translate3d(0, 0, 0)",
+//     transitionTimingFunction: "cubic-bezier(0.2, 0, 0.3, 1)",
+//}
+//})
+
 //*****************************ABOUT PAGE***************************************//
 export const StyledBackgroundSection = style({
   position: "fixed",

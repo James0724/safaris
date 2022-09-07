@@ -76,7 +76,7 @@ export const menuSecondaryBackground = style({
 })
 
 export const menuLayer = style({
-  background: colors.darkbrown,
+  background: colors.yellow,
   top: "0",
   left: "0",
   right: "0",
@@ -127,24 +127,32 @@ export const menuLinklist = style({
 
 export const menuLinklistItem = style({
   listStyle: "none",
-  fontWeight: theme.fontWeights.extrabold,
+  fontWeight: theme.fontWeights.bold,
   cursor: "pointer",
   whiteSpace: "nowrap",
-  paddingTop: "1rem",
-  paddingBottom: "1rem",
+  paddingTop: "0.7rem",
+  paddingBottom: "0.7rem",
   position: "relative",
   width: "100%",
+  "@media": {
+    [media.medium]: {
+      fontWeight: theme.fontWeights.extrabold,
+    },
+    [media.large]: {
+      fontWeight: theme.fontWeights.extrabold,
+    },
+  },
 })
 
 export const menuLinkItem = style({
-  color: colors.green,
-  fontSize: theme.fontSizes[5],
+  color: colors.darkbrown,
+  fontSize: theme.fontSizes[4],
   fontWeight: theme.fontWeights.extrabold,
   textDecoration: "none",
   textShadow: "2px 2px #000",
   ":hover": {
-    color: colors.black,
-    textShadow: "2px 2px #867d2c",
+    color: colors.green,
+    textShadow: "2px 2px #5f310e",
   },
 })
 
@@ -166,7 +174,7 @@ export const span = style({
   fontWeight: theme.fontWeights.bold,
   lineHeight: theme.lineHeights.tight,
   letterSpacing: theme.letterSpacings.wide,
-  color: colors.green,
+  color: colors.darkbrown,
   fontFamily: theme.fonts.mono,
   textTransform: "uppercase",
   zIndex: "20",
@@ -178,7 +186,7 @@ export const span = style({
   paddingTop: "0.5em",
   paddingBottom: "0.5em",
   ":hover": {
-    color: colors.lightyellow,
+    color: colors.green,
   },
   "@media": {
     [media.medium]: {
@@ -206,6 +214,7 @@ export const cities = style({
 
 export const menuTextWrapper = style({
   display: "none",
+  width: "80%",
   "@media": {
     [media.small]: {
       display: "block",

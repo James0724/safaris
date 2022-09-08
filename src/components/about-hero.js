@@ -90,12 +90,12 @@ export default function AboutHero() {
               experiences. We can fulfil your bucket-list dreams.
             </Text>
           </Box>
-          <Box center>
+          {/* <Box center>
             <Heading color="green">
               Our Company culture comes in many shapes and forms, but we
               particularly pride ourselves on:
             </Heading>
-          </Box>
+          </Box> */}
         </Container>
       </Section>
     </>

@@ -361,3 +361,9 @@ export function MenuLayer({ cx: _cx = [], ...props }) {
 export function MenuCityBackground({ cx: _cx = [], ...props }) {
   return <Base cx={[menustyles.menuCityBackground, ..._cx]} {...props} />
 }
+
+//**********************Footer Styling*******************************//
+
+export function FooterLinkItem({ cx: _cx = [], ...props }) {
+  return <Base cx={[styles.footerLinkItem, ..._cx]} {...props} />
+}

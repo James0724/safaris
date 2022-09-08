@@ -364,10 +364,11 @@ export const text: Record<TextVariants, string> = styleVariants({
     {
       marginBottom: theme.space[3],
       fontFamily: theme.fonts.heading,
-      fontSize: theme.fontSizes[5],
+      fontSize: theme.fontSizes[4],
       fontWeight: theme.fontWeights.extrabold,
       lineHeight: theme.lineHeights.tight,
       letterSpacing: theme.letterSpacings.wide,
+      //whiteSpace: "nowrap",
       textShadow: "2px 2px #000",
       "@media": {
         [media.medium]: {
@@ -744,10 +745,6 @@ export const video = style({
   left: 0,
 })
 
-export const footerLinks = style({
-  overflow: "hidden",
-})
-
 // export const imageWrapper = style({
 //   position: "relative",
 //   backgroundSize: "cover",
@@ -806,9 +803,52 @@ export const heroTextWrapper = style({
 //}
 //})
 
-//*****************************ABOUT PAGE***************************************//
-export const StyledBackgroundSection = style({
-  position: "fixed",
+//*****************************Footer***************************************//
+export const footerLogo = style({
+  height: "100px",
+  width: "100px",
+
+  "@media": {
+    [media.small]: { height: "150px", width: "150px" },
+  },
+})
+
+export const centerDiv = style({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  width: "100%",
+  height: "100%",
+})
+
+export const footerLinks = style({
+  color: colors.black,
+  overflow: "hidden",
+  display: "none",
+  cursor: "pointer",
+  "@media": {
+    [media.small]: {
+      display: "block",
+    },
+    [media.large]: {
+      display: "block",
+    },
+  },
+})
+export const footerLinksFlex = style({
+  display: "flex",
+  listStyle: "none",
+})
+export const footerLinkItem = style({
+  marginLeft: "0.5rem",
+  marginRight: "0.5rem",
+  paddingLeft: "0.5rem",
+  paddingRight: "0.5rem",
+  color: colors.yellow,
+  whiteSpace: "nowrap",
+})
+export const footerCopyright = style({
+  whiteSpace: "nowrap",
 })
 
 // for debugging only

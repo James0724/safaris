@@ -1,6 +1,6 @@
 import { style, keyframes } from "@vanilla-extract/css"
-import { theme } from "../styles/theme.css"
-import { colors } from "../styles/colors.css"
+// import { theme } from "../styles/theme.css"
+// import { colors } from "../styles/colors.css"
 
 const breakpoints = ["40em", "52em", "64em"]
 
@@ -37,6 +37,10 @@ export const categoryHeading = style({
 export const gridImageWrapper = style({
   height: "200px",
   overflow: "hidden",
+  transition: "0.4s ease",
+  ":hover": {
+    transform: "scale(1.08)",
+  },
   "@media": {
     [media.small]: { height: "180px" },
     [media.medium]: { height: "180px" },
@@ -55,3 +59,8 @@ export const FlexboxItem = style({
     [media.medium]: { flex: "33.33%" },
   },
 })
+// export const imageCard = style({
+//   ":hover": {
+//     transform: "scale(1.08)",
+//   },
+// })

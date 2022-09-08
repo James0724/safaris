@@ -62,10 +62,10 @@ export default function FeatureList() {
                         image={getImage(item.categoryImage)}
                       />
                     </div>
-                    <Box paddingY={2}>
-                      <Subhead as="h2" color="green">
+                    <Box paddingY={3}>
+                      <Link to={`/${slug}`} className="link link--dia">
                         {item.categoryName}
-                      </Subhead>
+                      </Link>
                     </Box>
                   </Box>
                 </Link>

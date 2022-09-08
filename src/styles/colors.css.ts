@@ -13,4 +13,5 @@ export const colors = {
   darkbrown: "#5f310e",
   white: "#fadbb2",
   skyblue: "#6b8cc8",
+  grey: "#F2F3EB",
 }

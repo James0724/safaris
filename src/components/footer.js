@@ -1,10 +1,10 @@
 import * as React from "react"
-import { Twitter, Instagram, Facebook } from "react-feather"
+//import { Twitter, Instagram, Facebook } from "react-feather"
 
 import { graphql, useStaticQuery } from "gatsby"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 
-import { Link } from "./ui"
+import { FooterLinkItem, Link } from "./ui"
 import {
   Container,
   Flex,
@@ -50,18 +50,13 @@ export default function Footer() {
         <Box>
           <Flex variant="start" responsive>
             <Box paddingX={4}>
-              <GatsbyImage image={image} alt="logo" />
+              <div className={styles.centerDiv}>
+                <div className={styles.footerLogo}>
+                  <GatsbyImage image={image} alt="logo" />
+                </div>
+              </div>
             </Box>
-            {/* <Box>
-              <FlexList>
-                <li>
-                  <h3>facebook</h3>
-                </li>
-                <li>
-                  <h3>facebook</h3>
-                </li>
-              </FlexList>
-            </Box> */}
+
             <Box>
               <FlexListColumnStart>
                 <Kicker color="lightyellow">QUICK LINKS</Kicker>
@@ -121,15 +116,20 @@ export default function Footer() {
         <Box paddingY={1}>
           <FlexListSpaceBetween>
             <Box>
-              <Text as="p" className="copyright" color="yellow">
+              <Text as="p" className={styles.footerCopyright} color="yellow">
                 Copyright © rights reserved.
               </Text>
             </Box>
             <Box>
-              <FlexList className={styles.footerLinks}>
-                <l1>Terms & Conditions</l1> <li>Privacy Policy</li>
-                <li>Covid-19 & Booking Flexibility</li>
-              </FlexList>
+              <div className={styles.footerLinks}>
+                <ul className={styles.footerLinksFlex}>
+                  <FooterLinkItem>Terms & Conditions</FooterLinkItem>
+                  <FooterLinkItem>Privacy</FooterLinkItem>
+                  <FooterLinkItem>
+                    Covid-19 & Booking Flexibility
+                  </FooterLinkItem>
+                </ul>
+              </div>
             </Box>
           </FlexListSpaceBetween>
         </Box>

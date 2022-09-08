@@ -18,6 +18,7 @@ import {
   Flex,
 } from "./ui"
 import * as main from "./ui.css"
+import ContactForm from "./contactform"
 
 export default function AboutHero() {
   const results = useStaticQuery(graphql`
@@ -70,8 +71,8 @@ export default function AboutHero() {
               out directly to one of the departments listed below.
             </Text>
           </Box>
-          <Flex>
-            <Box width="half">
+
+          {/* <Box width="half">
               <Subhead as="h2" color="green">
                 Email: sales@endlessplainsafaris.com
               </Subhead>
@@ -81,60 +82,11 @@ export default function AboutHero() {
               <Subhead as="h2" color="green">
                 Nairobi, Kenya
               </Subhead>
-            </Box>
-            <Box width="half">
-              <form
-                method="post"
-                id="contactForm"
-                name="contactForm"
-                novalidate="novalidate"
-              >
-                <Flex>
-                  <Box width="half">
-                    <input
-                      type="text"
-                      className="form-control"
-                      name="fname"
-                      id="fname"
-                      placeholder="First name"
-                    />
-                  </Box>
-                  <Box width="half">
-                    <input
-                      type="text"
-                      className="form-control"
-                      name="lname"
-                      id="lname"
-                      placeholder="Last name"
-                    />
-                  </Box>
-                </Flex>
-                <Flex>
-                  <Box>
-                    <input
-                      type="text"
-                      className="form-control"
-                      name="email"
-                      id="email"
-                      placeholder="Email"
-                    />
-                  </Box>
-                </Flex>
-                <Flex>
-                  <Box>
-                    <textarea
-                      className="form-control"
-                      name="message"
-                      id="message"
-                      cols="30"
-                      rows="7"
-                      placeholder="Write your message"
-                    ></textarea>
-                  </Box>
-                </Flex>
-              </form>
-            </Box>
-          </Flex>
+            </Box> */}
+          <Box>
+            <ContactForm />
+          </Box>
+
           <Box center paddingY={5}>
             <Heading color="green">What our Clients Say:</Heading>
           </Box>

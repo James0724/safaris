@@ -62,9 +62,9 @@ export default function FeatureList() {
             <Underline />
             <Text as="p">
               We are a dynamic, proudly Kenya and Tanzania safari company. we
-              have professional licenced guides speaking four languages English,
-              Spanish, French and Swahili. for the past 5 years we have been
-              leading safari tours on behalf of reputable tour companies.
+              have professional licenced guides speaking five languages English,
+              Italian, Spanish, French and Swahili. for the past 5 years we have
+              been leading safari tours on behalf of reputable tour companies.
               Throught our work we uphold environmental princriples and we aim
               to help our community. We are at your service to make your dream
               vacation a reality the way you want it to be with high quality

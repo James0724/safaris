@@ -35,7 +35,8 @@ export const categoryHeading = style({
 })
 
 export const gridImageWrapper = style({
-  height: "200px",
+  height: "210px",
+  maxWidth: "400px",
   overflow: "hidden",
   transition: "0.4s ease",
   ":hover": {

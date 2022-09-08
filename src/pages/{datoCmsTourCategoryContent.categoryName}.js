@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import { getImage } from "gatsby-plugin-image"
-
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import slugify from "slugify"
 import BackgroundImage from "gatsby-background-image"
 import { convertToBgImage } from "gbimage-bridge"
 
@@ -15,12 +15,14 @@ import {
   Text,
   Section,
   Container,
+  Link,
 } from "../components/ui"
 
 import * as main from "../components/ui.css"
+import * as styles from "../components/category-page.css"
 
 const CategoryTemplate = ({ data }) => {
-  const { categoryName, categoryImage, categoryDescription } =
+  const { categoryName, categoryImage, categoryDescription, destinations } =
     data.datoCmsTourCategoryContent
 
   const image = getImage(categoryImage)
@@ -65,7 +67,43 @@ const CategoryTemplate = ({ data }) => {
               About {categoryName}
             </Subhead>
             <Underline />
-            <Text as="p">{categoryDescription}</Text>
+            <Text as="p">
+              {categoryDescription} Below are our most popular Safaris in this
+              category per parks and location, but we also offer any National
+              Park Safari or Cultural Tour combinations you might request,
+              providing you with your own custom tours that suits your needs and
+              budget. Please e-mail us for further details or leave your request
+              in the contact form in <Link to="/contact">contact page.</Link>
+            </Text>
+          </Box>
+          <Box>
+            <Subhead as="h2" color="green">
+              Poplular Destinations in {categoryName}
+            </Subhead>
+            <Underline />
+            {destinations.map((destination, i) => {
+              const slg = destination.destinationName
+              const slug = slugify(slg, { lower: true })
+              return (
+                <Link key={i} to={`/${slug}`} className={styles.FlexboxItem}>
+                  <Box paddingY={2}>
+                    <div className={styles.gridImageWrapper}>
+                      <GatsbyImage
+                        alt={destination.destinationImage.alt}
+                        image={getImage(
+                          destination.destinationImage.gatsbyImageData
+                        )}
+                      />
+                    </div>
+                  </Box>
+                  <Box paddingY={3}>
+                    <Link to={`/${slug}`} className="link link--dia">
+                      {destination.destinationName}
+                    </Link>
+                  </Box>
+                </Link>
+              )
+            })}
           </Box>
         </Container>
       </Section>
@@ -81,6 +119,13 @@ export const query = graphql`
       categoryImage {
         gatsbyImageData(placeholder: BLURRED)
         alt
+      }
+      destinations {
+        destinationImage {
+          alt
+          gatsbyImageData
+        }
+        destinationName
       }
     }
   }

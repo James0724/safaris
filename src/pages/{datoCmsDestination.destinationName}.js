@@ -48,7 +48,7 @@ const CategoryTemplate = ({ data }) => {
 
       <Section>
         <Container>
-          <Box center paddingY={5}>
+          <Box center paddingY={5} className="gs_reveal">
             <Kicker>{destinationName}</Kicker>
             <Subhead as="h2" color="green">
               Breath Taking Destinations
@@ -63,34 +63,36 @@ const CategoryTemplate = ({ data }) => {
           {destinationInformation.map((info, i) => {
             return (
               <div key={i}>
-                <Box paddingY={3}>
+                <Box paddingY={3} className="gs_reveal">
                   <Subhead as="h2" color="green">
                     {info.additionalInformationTitle}
                   </Subhead>
                 </Box>
-                <Box paddingY={2}>
+                <Box paddingY={2} className="gs_reveal">
                   <Text as="p">{info.additionalInformationContent}</Text>
                 </Box>
-                <div className={styles.Flexbox}>
-                  {info.additionalInformationImages.map((imageinfo, i) => {
-                    return (
-                      <div className={styles.FlexboxItem}>
-                        <Box padding={2}>
-                          <div className={styles.infoImageWrapper}>
-                            <GatsbyImage
-                              alt={imageinfo.alt}
-                              image={getImage(imageinfo)}
-                            />
-                          </div>
-                        </Box>
-                      </div>
-                    )
-                  })}
-                </div>
+                <Box className="gs_reveal">
+                  <div className={styles.Flexbox}>
+                    {info.additionalInformationImages.map((imageinfo, i) => {
+                      return (
+                        <div className={styles.FlexboxItem}>
+                          <Box padding={2}>
+                            <div className={styles.infoImageWrapper}>
+                              <GatsbyImage
+                                alt={imageinfo.alt}
+                                image={getImage(imageinfo)}
+                              />
+                            </div>
+                          </Box>
+                        </div>
+                      )
+                    })}
+                  </div>
+                </Box>
               </div>
             )
           })}
-          <Box center paddingY={5}>
+          <Box center paddingY={5} className="gs_reveal">
             <Kicker>{destinationName}</Kicker>
             <Subhead as="h2" color="green">
               Safari Packages with {destinationName}

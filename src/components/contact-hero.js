@@ -56,7 +56,7 @@ export default function AboutHero() {
               work too.
             </Text>
           </Box>
-          <Box center paddingY={5}>
+          <Box center paddingY={5} className="gs_reveal">
             <Kicker>PLAN YOUR JOURNEY WITH US</Kicker>
             <Subhead as="h2" color="green">
               We would like to here from you
@@ -86,7 +86,7 @@ export default function AboutHero() {
             <ContactForm />
           </Box>
 
-          <Box center paddingY={5}>
+          <Box center paddingY={5} className="gs_reveal">
             <Heading color="green">What our Clients Say:</Heading>
           </Box>
         </Container>

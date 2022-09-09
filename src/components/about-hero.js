@@ -50,7 +50,7 @@ export default function AboutHero() {
       </BackgroundImage>
       <Section>
         <Container>
-          <Box center>
+          <Box center className="gs_reveal">
             <Text className={styles.aboutHeroText}>
               We’re serious about creating amazing products, practices, open
               work, accessibility, and inclusivity. And in all that we strive to
@@ -58,7 +58,7 @@ export default function AboutHero() {
               community and deeply care about giving back.
             </Text>
           </Box>
-          <Box center paddingY={5}>
+          <Box center paddingY={5} className="gs_reveal">
             <Kicker>Our Features</Kicker>
             <Subhead as="h2" color="green">
               About our services
@@ -73,7 +73,7 @@ export default function AboutHero() {
               tours that suits your needs and budget
             </Text>
           </Box>
-          <Box center paddingY={5}>
+          <Box center paddingY={5} className="gs_reveal">
             <Kicker>WHY ENDLESS PLAIN SAFARIS IS THE BEST</Kicker>
             <Subhead as="h2" color="green">
               We are Experienced

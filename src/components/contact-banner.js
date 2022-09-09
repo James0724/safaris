@@ -33,7 +33,7 @@ export default function Hero() {
 
   return (
     <Section>
-      <Container>
+      <Container className="gs_reveal">
         <Flex gap={4} variant="responsive">
           <Box width="half">
             <BackgroundImage Tag="section" {...bgImage}>

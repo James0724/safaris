@@ -58,7 +58,7 @@ const CategoryTemplate = ({ data }) => {
 
       <Section>
         <Container>
-          <Box center paddingY={5}>
+          <Box center paddingY={5} className="gs_reveal">
             <Kicker>{categoryName}</Kicker>
             <Subhead as="h2" color="green">
               Breath Taking Destinations
@@ -76,7 +76,7 @@ const CategoryTemplate = ({ data }) => {
               in the contact form in <Link to="/contact">contact page.</Link>
             </Text>
           </Box>
-          <Box>
+          <Box className="gs_reveal">
             <Subhead as="h2" color="green">
               Poplular Destinations in {categoryName}
             </Subhead>

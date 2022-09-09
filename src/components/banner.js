@@ -34,7 +34,7 @@ export default function Ad() {
 
   return (
     <Section>
-      <Container>
+      <Container className="gs_reveal">
         <Flex gap={4} variant="responsive">
           <Box width="half">
             <Subhead as="h2" index="2" color="green">

@@ -34,7 +34,7 @@ export default function FeatureList() {
 
   return (
     <Section>
-      <Container>
+      <Container className="gs_reveal">
         <Box center paddingY={5}>
           <Subhead as="h2" index="2" color="green">
             Jambo

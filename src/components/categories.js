@@ -24,7 +24,7 @@ export default function FeatureList() {
   return (
     <Section>
       <Container>
-        <Box center paddingY={5}>
+        <Box center paddingY={5} className="gs_reveal">
           <Kicker>FIND WHAT YOU LIKE</Kicker>
           <Subhead as="h2" color="green">
             Tour Categories
@@ -39,7 +39,7 @@ export default function FeatureList() {
             tours that suits your needs and budget
           </Text>
         </Box>
-        <Box>
+        <Box className="gs_reveal">
           <div className={styles.Flexbox}>
             {data.map((item, i) => {
               const slg = item.categoryName

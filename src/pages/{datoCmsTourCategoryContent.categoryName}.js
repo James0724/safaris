@@ -22,7 +22,7 @@ import * as main from "../components/ui.css"
 import * as styles from "../components/category-page.css"
 
 const CategoryTemplate = ({ data }) => {
-  const { categoryName, categoryImage, categoryDescription, destinations } =
+  const { categoryName, categoryImage, categoryDescription, destinationList } =
     data.datoCmsTourCategoryContent
 
   const image = getImage(categoryImage)
@@ -81,29 +81,33 @@ const CategoryTemplate = ({ data }) => {
               Poplular Destinations in {categoryName}
             </Subhead>
             <Underline />
-            {destinations.map((destination, i) => {
-              const slg = destination.destinationName
-              const slug = slugify(slg, { lower: true })
-              return (
-                <Link key={i} to={`/${slug}`} className={styles.FlexboxItem}>
-                  <Box paddingY={2}>
-                    <div className={styles.gridImageWrapper}>
-                      <GatsbyImage
-                        alt={destination.destinationImage.alt}
-                        image={getImage(
-                          destination.destinationImage.gatsbyImageData
-                        )}
-                      />
-                    </div>
-                  </Box>
-                  <Box paddingY={3}>
-                    <Link to={`/${slug}`} className="link link--dia">
-                      {destination.destinationName}
-                    </Link>
-                  </Box>
-                </Link>
-              )
-            })}
+            <div className={styles.Flexbox}>
+              {destinationList.map((destination, i) => {
+                const slg = destination.destinationName
+                const slug = slugify(slg, { lower: true })
+                return (
+                  <Link key={i} to={`/${slug}`} className={styles.FlexboxItem}>
+                    <Box padding={3}>
+                      <Box paddingY={2}>
+                        <div className={styles.gridImageWrapper}>
+                          <GatsbyImage
+                            alt={destination.destinationImage.alt}
+                            image={getImage(
+                              destination.destinationImage.gatsbyImageData
+                            )}
+                          />
+                        </div>
+                      </Box>
+                      <Box paddingY={3}>
+                        <Link to={`/${slug}`} className="link link--dia">
+                          {destination.destinationName}
+                        </Link>
+                      </Box>
+                    </Box>
+                  </Link>
+                )
+              })}
+            </div>
           </Box>
         </Container>
       </Section>
@@ -120,7 +124,7 @@ export const query = graphql`
         gatsbyImageData(placeholder: BLURRED)
         alt
       }
-      destinations {
+      destinationList {
         destinationImage {
           alt
           gatsbyImageData

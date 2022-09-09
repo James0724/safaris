@@ -76,6 +76,22 @@ const CategoryTemplate = ({ data }) => {
                 <Box paddingY={2}>
                   <Text as="p">{info.additionalInformationContent}</Text>
                 </Box>
+                <div className={styles.Flexbox}>
+                  {info.additionalInformationImages.map((imageinfo, i) => {
+                    return (
+                      <div className={styles.FlexboxItem}>
+                        <Box padding={2}>
+                          <div className={styles.gridImageWrapper}>
+                            <GatsbyImage
+                              alt={imageinfo.alt}
+                              image={getImage(imageinfo)}
+                            />
+                          </div>
+                        </Box>
+                      </div>
+                    )
+                  })}
+                </div>
               </div>
             )
           })}

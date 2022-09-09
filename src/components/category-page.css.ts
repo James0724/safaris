@@ -48,6 +48,15 @@ export const gridImageWrapper = style({
   },
 })
 
+export const infoImageWrapper = style({
+  maxHeight: "450px",
+  overflow: "hidden",
+  transition: "0.4s ease",
+  ":hover": {
+    transform: "scale(1.08)",
+  },
+})
+
 export const Flexbox = style({
   display: "flex",
   flexWrap: "wrap",
@@ -59,8 +68,3 @@ export const FlexboxItem = style({
     [media.medium]: { flex: "33.33%" },
   },
 })
-// export const imageCard = style({
-//   ":hover": {
-//     transform: "scale(1.08)",
-//   },
-// })

@@ -1,16 +1,7 @@
 import React from "react"
 //import { graphql } from "gatsby"
 //import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import {
-  Container,
-  Box,
-  Kicker,
-  Text,
-  Subhead,
-  Grid,
-  Underline,
-  Section,
-} from "./ui"
+import { Container, Box, Kicker, Text, Subhead, Underline, Section } from "./ui"
 
 export default function FeatureList() {
   return (
@@ -32,8 +23,7 @@ export default function FeatureList() {
           </Text>
         </Box>
         <Box>
-          <Grid>
-            {/* {categories.map((category, i) => {
+          {/* {categories.map((category, i) => {
             return (
               <div key={i}>
                 <Box>
@@ -48,7 +38,6 @@ export default function FeatureList() {
               </div>
             )
           })} */}
-          </Grid>
         </Box>
       </Container>
     </Section>

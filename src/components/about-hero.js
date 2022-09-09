@@ -15,7 +15,6 @@ import {
   Kicker,
   Subhead,
   Underline,
-  Heading,
 } from "./ui"
 
 import * as main from "./ui.css"

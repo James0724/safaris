@@ -3,16 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import slugify from "slugify"
 import { Link } from "gatsby"
-import {
-  Container,
-  Box,
-  Kicker,
-  Text,
-  Subhead,
-  Grid,
-  Underline,
-  Section,
-} from "./ui"
+import { Container, Box, Kicker, Text, Subhead, Underline, Section } from "./ui"
 
 import * as styles from "../components/category-page.css"
 

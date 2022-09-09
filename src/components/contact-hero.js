@@ -15,7 +15,6 @@ import {
   Subhead,
   Underline,
   Heading,
-  Flex,
 } from "./ui"
 import * as main from "./ui.css"
 import ContactForm from "./contactform"

@@ -14,7 +14,7 @@ import {
   staggerRevealClose,
 } from "./animations"
 
-import { Box, Flex, Subhead, Text, Section, Container } from "./ui"
+import { Box, Flex, Subhead, Text, Container } from "./ui"
 
 const cities = [
   {
@@ -25,7 +25,7 @@ const cities = [
   {
     name: "Lake Parks",
     image: "https://www.datocms-assets.com/79325/1662093495-nakuru.jpg",
-    slug: "lake-game-parks-safaris",
+    slug: "lake-parks-safaris",
   },
   {
     name: "City Excursions",

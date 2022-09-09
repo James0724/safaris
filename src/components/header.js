@@ -8,7 +8,7 @@ import { convertToBgImage } from "gbimage-bridge"
 
 import Navigation from "./navbar"
 import * as styles from "./menu.css"
-import { Flex, Box } from "./ui"
+import { Flex } from "./ui"
 
 const Header = () => {
   const results = useStaticQuery(graphql`

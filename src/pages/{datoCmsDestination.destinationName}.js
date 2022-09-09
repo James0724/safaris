@@ -2,7 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
-import slugify from "slugify"
 import BackgroundImage from "gatsby-background-image"
 import { convertToBgImage } from "gbimage-bridge"
 
@@ -15,7 +14,6 @@ import {
   Text,
   Section,
   Container,
-  Link,
 } from "../components/ui"
 
 import * as main from "../components/ui.css"
@@ -27,10 +25,7 @@ const CategoryTemplate = ({ data }) => {
     destinationName,
     destinationImage,
     description,
-    destinationAccommodation,
-    destinationActivities,
     destinationInformation,
-    destinationClimate,
   } = data.datoCmsDestination
 
   const image = getImage(destinationImage)
@@ -81,7 +76,7 @@ const CategoryTemplate = ({ data }) => {
                     return (
                       <div className={styles.FlexboxItem}>
                         <Box padding={2}>
-                          <div className={styles.gridImageWrapper}>
+                          <div className={styles.infoImageWrapper}>
                             <GatsbyImage
                               alt={imageinfo.alt}
                               image={getImage(imageinfo)}

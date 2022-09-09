@@ -3,18 +3,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 
-import {
-  Container,
-  Section,
-  Text,
-  SuperHeading,
-  Box,
-  Kicker,
-  Subhead,
-  Underline,
-  Heading,
-  Flex,
-} from "./ui"
+import { Box, Underline, Heading } from "./ui"
 
 import * as styles from "./contactform.css"
 import * as main from "./ui.css"

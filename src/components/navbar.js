@@ -134,6 +134,30 @@ const Navigation = ({ state, handleClick }) => {
                         <h1>Contact</h1>
                       </Link>
                     </li>
+                    <li className={styles.menuLinklistItem}>
+                      <Link
+                        className={styles.menuLinkItem}
+                        onMouseEnter={e => handleHover(e)}
+                        onBlur=""
+                        onMouseOut={e => handleHoverExit(e)}
+                        ref={el => (line2 = el)}
+                        to="/about"
+                      >
+                        <h1>Kenya Safaris</h1>
+                      </Link>
+                    </li>
+                    <li className={styles.menuLinklistItem}>
+                      <Link
+                        className={styles.menuLinkItem}
+                        onMouseEnter={e => handleHover(e)}
+                        onBlur=""
+                        onMouseOut={e => handleHoverExit(e)}
+                        ref={el => (line2 = el)}
+                        to="/about"
+                      >
+                        <h1>Tanzania Safaris</h1>
+                      </Link>
+                    </li>
                   </ul>
                 </Box>
                 <Box

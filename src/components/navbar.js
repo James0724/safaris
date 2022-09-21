@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react"
 import { gsap } from "gsap"
 import { Link } from "gatsby"
+import slugify from "slugify"
 import * as styles from "./menu.css"
 
 import {
@@ -47,6 +48,11 @@ const cities = [
     image: "https://www.datocms-assets.com/79325/1662093353-marine.jpg",
     slug: "marine-parks-safaris",
   },
+]
+
+const pages = [
+  { country: "Kenya", title: "Kenya Safaris" },
+  { country: "Tanzania", title: "Tanzania Safaris" },
 ]
 
 const Navigation = ({ state, handleClick }) => {
@@ -96,7 +102,7 @@ const Navigation = ({ state, handleClick }) => {
               ></div>
 
               <Flex>
-                <Box center width="half" paddingY={5}>
+                <Box center width="full" paddingY={5}>
                   <ul className={styles.menuLinklist}>
                     <li className={styles.menuLinklistItem}>
                       <Link
@@ -134,6 +140,26 @@ const Navigation = ({ state, handleClick }) => {
                         <h1>Contact</h1>
                       </Link>
                     </li>
+
+                    {pages.map((page, i) => {
+                      const slg = page.title
+                      const slug = slugify(slg, { lower: true })
+                      return (
+                        <li key={i} className={styles.menuLinklistItem}>
+                          <Link
+                            className={styles.menuLinkItem}
+                            onMouseEnter={e => handleHover(e)}
+                            onBlur=""
+                            onMouseOut={e => handleHoverExit(e)}
+                            ref={el => (line2 = el)}
+                            Link
+                            to={`/${slug}`}
+                          >
+                            <h1>{page.title}</h1>
+                          </Link>
+                        </li>
+                      )
+                    })}
                     <li className={styles.menuLinklistItem}>
                       <Link
                         className={styles.menuLinkItem}
@@ -141,27 +167,15 @@ const Navigation = ({ state, handleClick }) => {
                         onBlur=""
                         onMouseOut={e => handleHoverExit(e)}
                         ref={el => (line2 = el)}
-                        to="/about"
+                        to="/safaripackages"
                       >
-                        <h1>Kenya Safaris</h1>
-                      </Link>
-                    </li>
-                    <li className={styles.menuLinklistItem}>
-                      <Link
-                        className={styles.menuLinkItem}
-                        onMouseEnter={e => handleHover(e)}
-                        onBlur=""
-                        onMouseOut={e => handleHoverExit(e)}
-                        ref={el => (line2 = el)}
-                        to="/about"
-                      >
-                        <h1>Tanzania Safaris</h1>
+                        <h1>Safaris Packages</h1>
                       </Link>
                     </li>
                   </ul>
                 </Box>
-                <Box
-                  width="half"
+                {/* <Box
+                  width="quarter"
                   padding={3}
                   className={styles.menuTextWrapper}
                 >
@@ -177,7 +191,7 @@ const Navigation = ({ state, handleClick }) => {
                     prepared to help our travellers have the safest and most
                     rewarding safari possible.
                   </Text>
-                </Box>
+                </Box> */}
               </Flex>
               <Box>
                 <Box center>

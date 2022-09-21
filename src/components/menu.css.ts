@@ -202,12 +202,16 @@ export const span = style({
 export const cities = style({
   display: "flex",
   flexDirection: "column",
+  padding: "1rem",
+  borderTop: "solid 2px #000",
+  visibility: "hidden",
   "@media": {
     [media.medium]: {
       flexDirection: "row",
     },
     [media.large]: {
       flexDirection: "row",
+      visibility: "visible",
     },
   },
 })

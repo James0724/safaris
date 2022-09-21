@@ -139,7 +139,7 @@ export type Widths =
   | "half"
   | "quarter"
   | "third"
-  | "twothirds"
+  | "threeQuater"
   | "fitContent"
 
 export const widths: Record<Widths, string> = styleVariants(
@@ -148,7 +148,7 @@ export const widths: Record<Widths, string> = styleVariants(
     half: "50%",
     quarter: "25%",
     third: "33.3333%",
-    twothirds: "33.3333%",
+    threeQuater: "75%",
     fitContent: "fit-content",
   },
   width => [
@@ -771,7 +771,7 @@ export const video = style({
 export const heroImageWrapper = style({
   height: "75vh",
   backgroundAttachment: "fixed",
-  backgroundPosition: "center",
+  backgroundPosition: "bottom center",
 })
 export const heroTextWrapper = style({
   display: "flex",

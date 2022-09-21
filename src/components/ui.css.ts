@@ -769,9 +769,23 @@ export const video = style({
 // })
 
 export const heroImageWrapper = style({
-  height: "75vh",
+  height: "65vh",
   backgroundAttachment: "fixed",
-  backgroundPosition: "bottom center",
+  //backgroundPosition: "center",
+  ":before": {
+    backgroundPosition: "bottom  !important",
+  },
+  ":after": {
+    backgroundPosition: "bottom !important",
+  },
+  "@media": {
+    [media.medium]: {
+      height: "75vh",
+    },
+    [media.large]: {
+      height: "75vh",
+    },
+  },
 })
 export const heroTextWrapper = style({
   display: "flex",

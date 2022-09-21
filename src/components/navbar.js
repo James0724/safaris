@@ -55,7 +55,7 @@ const pages = [
   { country: "Tanzania", title: "Tanzania Safaris" },
 ]
 
-const Navigation = ({ state, handleClick }) => {
+const Navigation = ({ state, closeMenu }) => {
   let menuLayer = useRef(null)
   let reveal1 = useRef(null)
   let reveal2 = useRef(null)
@@ -107,8 +107,8 @@ const Navigation = ({ state, handleClick }) => {
                     <li className={styles.menuLinklistItem}>
                       <Link
                         onMouseEnter={e => handleHover(e)}
-                        onBlur=""
                         onMouseOut={e => handleHoverExit(e)}
+                        onClick={closeMenu}
                         ref={el => (line1 = el)}
                         to="/"
                         className={styles.menuLinkItem}
@@ -120,8 +120,8 @@ const Navigation = ({ state, handleClick }) => {
                       <Link
                         className={styles.menuLinkItem}
                         onMouseEnter={e => handleHover(e)}
-                        onBlur=""
                         onMouseOut={e => handleHoverExit(e)}
+                        onClick={closeMenu}
                         ref={el => (line2 = el)}
                         to="/about"
                       >
@@ -133,7 +133,7 @@ const Navigation = ({ state, handleClick }) => {
                         className={styles.menuLinkItem}
                         onMouseEnter={e => handleHover(e)}
                         onMouseOut={e => handleHoverExit(e)}
-                        onBlur=""
+                        onClick={closeMenu}
                         ref={el => (line3 = el)}
                         to="/contact"
                       >
@@ -149,8 +149,8 @@ const Navigation = ({ state, handleClick }) => {
                           <Link
                             className={styles.menuLinkItem}
                             onMouseEnter={e => handleHover(e)}
-                            onBlur=""
                             onMouseOut={e => handleHoverExit(e)}
+                            onClick={closeMenu}
                             ref={el => (line2 = el)}
                             Link
                             to={`/${slug}`}
@@ -164,8 +164,8 @@ const Navigation = ({ state, handleClick }) => {
                       <Link
                         className={styles.menuLinkItem}
                         onMouseEnter={e => handleHover(e)}
-                        onBlur=""
                         onMouseOut={e => handleHoverExit(e)}
+                        onClick={closeMenu}
                         ref={el => (line2 = el)}
                         to="/safaripackages"
                       >

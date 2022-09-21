@@ -126,6 +126,7 @@ export const menuLinklist = style({
 })
 
 export const menuLinklistItem = style({
+  zIndex: "100",
   listStyle: "none",
   fontWeight: theme.fontWeights.bold,
   cursor: "pointer",
@@ -146,7 +147,7 @@ export const menuLinklistItem = style({
 
 export const menuLinkItem = style({
   color: colors.darkbrown,
-  fontSize: theme.fontSizes[4],
+  fontSize: theme.fontSizes[3],
   fontWeight: theme.fontWeights.extrabold,
   textDecoration: "none",
   textShadow: "2px 2px #000",

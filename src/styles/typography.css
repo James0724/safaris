@@ -103,7 +103,6 @@ a:focus-visible {
   cursor: pointer;
   font-size: 18px;
   position: relative;
-  white-space: nowrap;
   color: #867d2c;
   text-transform: uppercase;
 }

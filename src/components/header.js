@@ -58,6 +58,29 @@ const Header = () => {
     }
   }
 
+  const handleCloseMenu = () => {
+    if (state.initial === false) {
+      setState({
+        initial: null,
+        clicked: true,
+        menuName: "Close",
+        scrollvertical: false,
+      })
+    } else if (state.clicked === true) {
+      setState({
+        clicked: !state.clicked,
+        menuName: "Menu",
+        scrollvertical: true,
+      })
+    } else if (state.clicked === false) {
+      setState({
+        clicked: !state.clicked,
+        menuName: "Close",
+        scrollvertical: false,
+      })
+    }
+  }
+
   //Determine if out menu button should be disabled
   const disableMenu = () => {
     setDisabled(!disabled)
@@ -86,7 +109,7 @@ const Header = () => {
         </Flex>
       </div>
 
-      <Navigation state={state} />
+      <Navigation state={state} closeMenu={handleCloseMenu} />
     </div>
   )
 }
